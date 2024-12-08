@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main heading -->
+        <div class="heading">
+            <h1>Todo Application</h1>
+        </div>
+    
+        <!-- Progress section -->
+        <div class="task-container">
+            <!-- Todo section-->
+            <div class="task-section" id="todo">
+                <h2>To Do</h2>
+                <div class="task-list" id="todo-list"></div>
+                <button class="add-task-btn" id="add-todo-btn">Add New Task</button>
+            </div>
+    
+            <!-- In progress section -->
+            <div class="task-section" id="in-progress">
+                <h2>In Progress</h2>
+                <div class="task-list" id="in-progress-list"></div>
+                <button class="add-task-btn" id="add-in-progress-btn">Add New Task</button>
+            </div>
+    
+            <!-- Finished section -->
+            <div class="task-section" id="finished">
+                <h2>Finished</h2>
+                <div class="task-list" id="finished-list"></div>
+                <button class="add-task-btn" id="add-finished-btn">Add New Task</button>
+            </div>
+        </div>
+        
+        <!-- Task form -->
+        <div id="task-form" style="display: none;">
+            <h3>Add Task</h3>
+            <label for="task-name">Task Name</label>
+            <input type="text" id="task-name" required>
+            <label for="task-difficulty">Difficulty</label>
+            <select id="task-difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <label for="task-date">Task Date</label>
+            <input type="date" id="task-date" required>
+            <label for="task-time">Time</label>
+            <input type="text" id="task-time" required>
+            <label for="task-description">Description:</label>
+            <input  type="text" id="task-description" required >
+            <button id="submit-task-btn">Submit Task</button>
+            <button id="cancel-btn">Cancel</button>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
