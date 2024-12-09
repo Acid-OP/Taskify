@@ -19,10 +19,12 @@ body {
     width: 80%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     padding-top: 50px;
 }
 
-.heading {
+.heading { 
     font-size: 36px;  /* Adjust size as per your design */
     font-weight: 600; /* A bit bolder for emphasis */
     color: #333;      /* Dark color for clean contrast */
@@ -33,11 +35,9 @@ body {
     position: relative;  /* For adding border or underline */
     text-align: center;
     margin-bottom: 40px;
-    
 }
 
 .task-container {
-    padding-top: 20px;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -57,29 +57,47 @@ body {
     
 }
 
-
 .task-section h2 {
     margin-bottom: 20px;
     font-family: 'Sans-serif', sans-serif;  /* Consistent with the page font */
     font-size: 24px;  /* Adjust to fit the hierarchy of text */
     font-weight: 540;  /* Slightly bold but not too heavy */
     color: #333;  /* Dark color for contrast */
-    text-align: left;  /* Align text to the left for clarity */
+    text-align: center;  /* Align text to the left for clarity */
     margin-bottom: 10px;  /* Add some space below the heading */
     letter-spacing: 0.5px;  /* Slight letter spacing for clarity */
     text-transform: uppercase; /* Make it uppercase for clean, bold look */
+    margin-bottom: 20px;
 }
 
 .task-list {
     margin-bottom: 20px;  /* Spacing between task list and button */
 }
+#add-todo-btn , #add-in-progress-btn, #add-finished-btn{
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;  /* Align content to the left */
+    align-items: center;
+    cursor: pointer;
+}
+.plus-symbol {
+    margin-left: 10px;  /* Add some space between 'Add' and '+' */
+    font-weight: bold;
+    font-size: 20px;  /* Adjust size of the plus symbol */
+}
 
 .add-task-btn {
     display: flex;
     justify-content: flex-start;
-    width: 60%;
+    width: 100%;
+    height: 35px;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: black;
+    border-radius: 8px;
     color: white;
     border: none;
     cursor: pointer;
@@ -87,13 +105,27 @@ body {
 }
 
 .add-task-btn:hover {
-    background-color: #45a049;
+    background-color: black;
 }
 
 .add-task-btn:active {
-    background-color: #3e8e41;
+    background-color: black;
 }
-
+/* Styling Content of Difficulty , Desc , Time */
+.head{
+    font-family: system-ui;
+}
+.task-description{
+    font-family: sans-serif;
+    font-weight: lighter;
+    color: grey;
+}
+.task-time{
+    font-family: sans-serif;
+    font-weight: lighter;
+    color: grey;
+    
+}
 /* New form styling */
 #task-form {
     background-color: #fff;
@@ -133,26 +165,26 @@ body {
 #task-form button {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: black;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 #task-form button:hover {
-    background-color: #45a049;
+    background-color: black;
 }
 
 #task-form button:active {
-    background-color: #3e8e41;
+    background-color: black;
 }
 
 /* Overlay for task form background */
 #task-form:before {
     content: "";
     position: fixed;
-    
-    
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
@@ -162,16 +194,16 @@ body {
     height: 120px;
     display: flex;
     flex-direction: column;
-    
     justify-content: flex-start;
-    background-color: #fff;
+    background-color: #f2f2f2;
     gap: 5px;
     padding: 10px;
-    margin-right: 10px;
+    margin: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
+    transition: transform 0.2s ease;
+    cursor: move;
 }
 .task {
     display: flex;
@@ -179,8 +211,8 @@ body {
     text-align: left; 
     font-weight: bold;
     padding-top: 2px;
-    padding-bottom: 20px;
-    gap: 10px;
+    padding-bottom: 10px;
+    gap: px;
     padding-left: 10px;
 }
 .task-2{
@@ -195,8 +227,6 @@ body {
     align-items: center;
     gap: 12px;
     padding-left: 10px;
-    padding-bottom: 14px;
-    
     
 }
 
@@ -206,7 +236,6 @@ body {
     justify-content: center;
     align-items: center;
     padding-right: 10px;
-    padding-bottom: 14px;
 }
 
 /* Task difficulty colors */
@@ -214,27 +243,27 @@ body {
     color: white;
     background-color: #4CAF50; /* Green for easy */
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     text-align: center;
-    font-weight: bold;
+    font-weight: lighter;
 }
 
 .task-difficulty.medium {
     color: white;
     background-color: #FF9800; /* Orange for medium */
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     text-align: center;
-    font-weight: bold;
+    font-weight: lighter;
 }
 
 .task-difficulty.hard {
     color: white;
     background-color: #F44336; /* Red for hard */
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     text-align: center;
-    font-weight: bold;
+    font-weight: lighter;
 }
 /* Task date container */
 .task-date {
@@ -251,13 +280,6 @@ body {
     font-size: 16px;
 }
 
-
-.parent {
-
-    border: 1px solid #ccc;
-    background-color: #fff;
-    cursor: move;
-}
 
 .task-list {
     min-height: 40px;  /* Set a minimum height for the task list */
@@ -288,3 +310,4 @@ body {
     background-color: #45a049;  /* Hover effect for the button */
     
 }
+
