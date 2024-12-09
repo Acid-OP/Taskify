@@ -4,33 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <!-- Main heading -->
         <div class="heading">
-            <h1>Todo Application</h1>
+            <h1>Taskify</h1>
         </div>
     
         <!-- Progress section -->
         <div class="task-container">
             <!-- Todo section-->
-            <div class="task-section" id="todo">
+            <div class="task-section" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h2>To Do</h2>
                 <div class="task-list" id="todo-list"></div>
                 <button class="add-task-btn" id="add-todo-btn">Add New Task</button>
             </div>
     
             <!-- In progress section -->
-            <div class="task-section" id="in-progress">
+            <div class="task-section" id="in-progress" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h2>In Progress</h2>
                 <div class="task-list" id="in-progress-list"></div>
                 <button class="add-task-btn" id="add-in-progress-btn">Add New Task</button>
             </div>
     
             <!-- Finished section -->
-            <div class="task-section" id="finished">
+            <div class="task-section" id="finished" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h2>Finished</h2>
                 <div class="task-list" id="finished-list"></div>
                 <button class="add-task-btn" id="add-finished-btn">Add New Task</button>
@@ -48,6 +49,7 @@
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
             </select>
+            <i class="fas fa-clock"></i>
             <label for="task-date">Task Date</label>
             <input type="date" id="task-date" required>
             <label for="task-time">Time</label>
